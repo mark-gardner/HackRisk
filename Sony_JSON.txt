@@ -1,0 +1,90 @@
+USER
+
+https://platform.lifelog.sonymobile.com/v1/users/me
+
+{
+    "result" : [
+        {
+            "username" : "Adam",
+            "created" : "2014-06-12T07:32:36.041Z",
+            "birthday" : "1992-08-06",
+            "gender" : "male",
+            "height" : 1.94,
+            "weight" : 93.5,
+            "bmr" : 76.74,
+            "stepLength" : 0.6,
+            "defaultStepLength" : 0.683,
+            "runningStepLength" : 1,
+            "defaultRunningStepLength" : 1.09296,
+            "lastModified" : "2014-06-12T07:32:36.170Z"
+        }
+    ]
+}
+
+
+ACTIVITY
+
+GET /v1/users/me/activities?start_time=2014-06-01T09:00:00.000Z&end_time=2014-06-10T09:00:00.000Z&type=physical
+
+https://platform.lifelog.sonymobile.com/v1/users/me/activities?start_time=2014-06-01T09:00:00.000Z&end_time=2014-06-10T09:00:00.000Z&type=physical
+
+{
+   "result" : [
+      ...
+      {
+         "id" : "ba2e7500-e022-4daf-817b-1e607e0cff43",
+         "type" : "physical",
+         "subtype" : "walk",
+         "sources" : [
+            {
+               "name" : "abc123",
+               "type" : "phone"
+               "id" : "42ad35b065e880a3",
+            }
+         ],
+         "startTime" : "2014-06-09T10:54:00.000+01:00",
+         "endTime" : "2014-06-09T10:57:00.000+01:00",
+         "details" : {
+            "steps" : [ 20, 28, 19 ],
+            "distance" : [ 13.662, 19.1268, 12.9789 ],
+            "aee" : [ 2.1361, 2.1361, 2.1361 ],
+            "tee" : [ 3.1361, 3.1361, 3.1361 ]
+         }
+      }
+   ...
+   ]
+}
+
+
+SLEEP
+
+GET /v1/users/me/activities?start_time=2014-06-01T09:00:00.000Z&end_time=2014-06-10T09:00:00.000Z&type=sleep
+
+https://platform.lifelog.sonymobile.com/v1/users/me/activities?start_time=2014-06-01T09:00:00.000Z&end_time=2014-06-10T09:00:00.000Z&type=sleep
+
+{
+   "result" : [
+      ...
+      {
+         "id" : "258353d5-0692-462b-8e7c-152194c084a7",
+         "type" : "sleep",
+         "sources" : [
+            {
+               "name" : "Smartband SWR10",
+               "type" : "smartband",
+               "id" : "42ad35b065e880a3"
+            }
+         ],
+         "startTime" : "2014-06-01T16:54:00.000+01:00",
+         "endTime" : "2014-06-01T16:57:00.000+01:00",
+         "details" : {
+            "state" : [
+               "awake",
+               "light",
+               "deep"
+            ]
+         }
+      }
+   ...
+   ]
+}
