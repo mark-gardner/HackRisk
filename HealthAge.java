@@ -1,24 +1,24 @@
 public class HealthAge {
 
-	int age;
+	double age;
 	char gender;
-	int heartRate;
-	int sleepHours;
-	int weight;
-	int height;
-	int nutrition;
-	int dailyActiveIntense = 0;
-	int dailyActiveChilled = 0;
+	double heartRate;
+	double sleepHours;
+	double weight;
+	double height;
+	double nutrition;
+	double dailyActiveIntense = 0;
+	double dailyActiveChilled = 0;
     
-	int sleepScore = 50;
-	int activeScore = 50;
-	int exerciseScore = 50;
-	int nutriScore = 50;
-	int wellbeingScore = 50;
+	double sleepScore = 50;
+	double activeScore = 50;
+	double exerciseScore = 50;
+	double nutriScore = 50;
+	double wellbeingScore = 50;
 	
-	int healthAdjustor = 0;
-	int BMI;	
-	int healthAge;
+	double healthAdjustor = 0;
+	double BMI;	
+	double healthAge;
 
 	String[] fitnessRec = new String[5];
 	String[] wellbeingRec = new String[5];
@@ -26,13 +26,15 @@ public class HealthAge {
 	String[] sleepRec = new String[5];
 	
 	//Constructor One
-	HealthAge(int age, char gender, int heartRate, int sleepHours, int weight, int height) {
+	public HealthAge(double age, char gender, double heartRate, double sleepHours, double weight, double height, double dailyActiveIntense, double dailyActiveChilled) {
 		this.age = age;
 		this.gender = gender;
 		this.heartRate = heartRate;
 		this.sleepHours = sleepHours;
 		this.weight = weight;
 		this.height = height;
+		this.dailyActiveIntense = dailyActiveIntense;
+		this.dailyActiveChilled = dailyActiveChilled;
 		
 		loadRecommendations();
 		calculateAge();
@@ -104,17 +106,17 @@ public class HealthAge {
 
 	}
 	
-	public void dailyActiveIntense(int dailyActiveIntense){
+	public void dailyActiveIntense(double dailyActiveIntense){
 		this.dailyActiveIntense = dailyActiveIntense;
 		calculateAge();
 	}
 	
-	public void dailyActiveChilled(int dailyActiveChilled) {
+	public void dailyActiveChilled(double dailyActiveChilled) {
 		this.dailyActiveChilled = dailyActiveChilled;
 		calculateAge();
 	}
 	
-	public void updateAge(int age) {
+	public void updateAge(double age) {
 		this.age = age;
 		calculateAge();
 	}
@@ -124,22 +126,22 @@ public class HealthAge {
 		calculateAge();
 	}
 	
-	public void heartRate(int heartRate) {
+	public void heartRate(double heartRate) {
 		this.heartRate = heartRate;
 		calculateAge();
 	}
 	
-	public void sleepHours(int sleepHours) {
+	public void sleepHours(double sleepHours) {
 		this.sleepHours = sleepHours;
 		calculateAge();
 	}
 	
-	public void weight(int weight) {
+	public void weight(double weight) {
 		this.weight = weight;
 		calculateAge();
 	}
 	
-	public void height(int height) {
+	public void height(double height) {
 		this.height = height;
 		calculateAge();
 	}
@@ -149,10 +151,10 @@ public class HealthAge {
 	}
 	
 	private void calculateBMI() {
-		this.BMI = weight/height;
+		this.BMI = weight/(height*height);
 	}
 	
-	private int calculateAge() {
+	private double calculateAge() {
 		calculateBMI();
 		this.healthAge = age;
 		
@@ -196,25 +198,25 @@ public class HealthAge {
 		
 		// Resting Heart Rate
 		// http://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=4820&context=ujmm
-		if (heartRate > 35 && heartRate < 45) {
+		if (heartRate > 35 && heartRate <= 45) {
 			healthAdjustor -= 50;
 			wellbeingScore += 50;
-		} else if (heartRate > 45 && heartRate < 55) {
+		} else if (heartRate > 45 && heartRate <= 55) {
 			healthAdjustor -= 20;
 			wellbeingScore += 30;
-		} else if (heartRate > 55 && heartRate < 64) {
+		} else if (heartRate > 55 && heartRate <= 64) {
 			healthAdjustor -= 10;
 			wellbeingScore += 30;
-		} else if (heartRate > 64 && heartRate < 69) {
+		} else if (heartRate > 64 && heartRate <= 69) {
 			// Normal no adjust
 			wellbeingScore += 20;
-		} else if (heartRate > 69 && heartRate < 75) {
+		} else if (heartRate > 69 && heartRate <= 75) {
 			healthAdjustor += 2;
 			wellbeingScore -= 10;
-		} else if (heartRate > 75 && heartRate < 82) {
+		} else if (heartRate > 75 && heartRate <= 82) {
 			healthAdjustor += 10;
 			wellbeingScore -= 20;
-		}  else if (heartRate > 82 && heartRate < 88) {
+		}  else if (heartRate > 82 && heartRate <= 88) {
 			healthAdjustor += 11;
 			wellbeingScore -= 20;
 		} else if (heartRate > 88 && heartRate < 95) {
@@ -250,7 +252,7 @@ public class HealthAge {
 	}
 	
 	
-	public String[] DayRecommendation() {
+	public String[] getDayRecommendation() {
 		String[] recommend = new String[3];
 		// Logic for daily recommendations needs smart logic (eg understanding user diary to know when time available for exercise)
 		// Currently using demo code, full logic in Release 2.0, coming summer 20xx.
