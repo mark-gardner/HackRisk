@@ -1,0 +1,18 @@
+{
+    "result" : [
+        {
+            "username" : "Adam",
+            "created" : "2014-06-12T07:32:36.041Z",
+            "birthday" : "1973-08-06",
+            "gender" : "male",
+            "height" : 1.79,
+            "weight" : 95.0,
+            "bmr" : 73.00,
+            "stepLength" : 0.6,
+            "defaultStepLength" : 0.683,
+            "runningStepLength" : 1,
+            "defaultRunningStepLength" : 1.09296,
+            "lastModified" : "2014-06-12T07:32:36.170Z"
+        }
+    ]
+}

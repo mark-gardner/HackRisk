@@ -1,0 +1,26 @@
+{
+   "result" : [
+      ...
+      {
+         "id" : "258353d5-0692-462b-8e7c-152194c084a7",
+         "type" : "sleep",
+         "sources" : [
+            {
+               "name" : "Smartband SWR10",
+               "type" : "smartband",
+               "id" : "42ad35b065e880a3"
+            }
+         ],
+         "startTime" : "2014-06-01T01:00:00.000+01:00",
+         "endTime" : "2014-06-01T06:57:00.000+01:00",
+         "details" : {
+            "state" : [
+               "awake",
+               "light",
+               "deep"
+            ]
+         }
+      }
+   ...
+   ]
+}
