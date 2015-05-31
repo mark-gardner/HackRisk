@@ -1,15 +1,14 @@
 {
    "result" : [
-      ...
-      {
+            {
          "id" : "ba2e7500-e022-4daf-817b-1e607e0cff43",
          "type" : "physical",
          "subtype" : "walk",
          "sources" : [
             {
                "name" : "abc123",
-               "type" : "phone"
-               "id" : "42ad35b065e880a3",
+               "type" : "phone",
+               "id" : "42ad35b065e880a3"
             }
          ],
          "startTime" : "2014-06-09T10:54:00.000+01:00",
@@ -21,6 +20,5 @@
             "tee" : [ 3.1361, 3.1361, 3.1361 ]
          }
       }
-   ...
-   ]
+      ]
 }
